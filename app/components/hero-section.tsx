@@ -2,19 +2,18 @@
 
 import { Stars } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
-import React, { useEffect } from "react";
+import React from "react";
 import { FiArrowRight } from "react-icons/fi";
 import {
   useMotionTemplate,
   useMotionValue,
   motion,
-  animate,
+  
 } from "framer-motion";
 import * as THREE from "three";
 import Link from "next/link";
 import FeaturedProjects from "./featured-projects";
 import TechStack from "./tech";
-import { Globe } from "lucide-react";
 
 
 
@@ -43,15 +42,6 @@ function TwinklingStars() {
 
 export const AuroraHero = () => {
   const color = useMotionValue(COLORS_TOP[0]);
-
-  useEffect(() => {
-    animate(color, COLORS_TOP, {
-      ease: "easeInOut",
-      duration: 10,
-      repeat: Number.POSITIVE_INFINITY,
-      repeatType: "mirror",
-    });
-  }, []);
 
   const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #020617 50%, ${color})`;
   const border = useMotionTemplate`1px solid ${color}`;
@@ -148,7 +138,7 @@ export const AuroraHero = () => {
             <span className="text-white ">About Me</span>
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground mb-6">
-            I'm a full-stack developer passionate about building responsive,
+            I&apos;m a full-stack developer passionate about building responsive,
             scalable web apps using modern tools like React, Next.js, Spring
             Boot, and MongoDB. I turn Figma designs into pixel-perfect
             interfaces and enjoy crafting clean, maintainable code that solves

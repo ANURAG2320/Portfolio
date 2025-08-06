@@ -1,8 +1,6 @@
 'use client';
 
-import { color, motion, useMotionTemplate } from 'framer-motion';
-import Link from 'next/link';
-import { FiArrowRight } from 'react-icons/fi';
+import { motion } from 'framer-motion';
 
 const projects = [
   {
