@@ -1,26 +1,83 @@
+/* Import Tailwind and any additional animation plugins */
 @import "tailwindcss";
+@import "tw-animate-css";
 
+/* Optional: dark mode variant helper (for future use) */
+@custom-variant dark (&:is(.dark *));
+
+/* Design Tokens: keep for ShadCN component support */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --radius: 0.5rem;
+
+  /* Light Theme */
+  --background: 255 255 255;
+  --foreground: 17 17 17;
+
+  --card: 255 255 255;
+  --card-foreground: 17 17 17;
+
+  --popover: 255 255 255;
+  --popover-foreground: 17 17 17;
+
+  --primary: 0 113 255;
+  --primary-foreground: 255 255 255;
+
+  --secondary: 245 245 245;
+  --secondary-foreground: 17 17 17;
+
+  --muted: 240 240 240;
+  --muted-foreground: 100 100 100;
+
+  --accent: 230 230 250;
+  --accent-foreground: 17 17 17;
+
+  --destructive: 255 85 85;
+  --border: 230 230 230;
+  --input: 230 230 230;
+  --ring: 0 113 255;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Dark Theme */
+.dark {
+  --background: 18 18 18;
+  --foreground: 250 250 250;
+
+  --card: 30 30 30;
+  --card-foreground: 250 250 250;
+
+  --popover: 30 30 30;
+  --popover-foreground: 250 250 250;
+
+  --primary: 0 113 255;
+  --primary-foreground: 255 255 255;
+
+  --secondary: 45 45 45;
+  --secondary-foreground: 250 250 250;
+
+  --muted: 55 55 55;
+  --muted-foreground: 170 170 170;
+
+  --accent: 70 70 70;
+  --accent-foreground: 250 250 250;
+
+  --destructive: 255 90 90;
+  --border: 70 70 70;
+  --input: 70 70 70;
+  --ring: 0 113 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Optional ShadCN base layer — minimal, editable */
+@layer base {
+  html {
+    font-family: theme('fontFamily.sans');
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    background-color: rgb(var(--background));
+    color: rgb(var(--foreground));
+  }
+
+  * {
+    border-color: rgb(var(--border));
+  }
 }
