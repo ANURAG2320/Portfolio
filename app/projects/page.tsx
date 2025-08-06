@@ -41,7 +41,7 @@ const projects = [
       'A role-based Angular + Spring Boot system to manage appointments, prescriptions, and medicine inventory with secure access and dashboards.',
     link: 'https://github.com/ANURAG2320/hospital-management-system',
     color: 'text-emerald-500',
-    image: '/images/HMS.SVG',
+    image: '/images/HMS.svg',
     imageClass: 'rotate-1',
   },
   {
